@@ -55,6 +55,8 @@ var myArray = ['product1','product3','product546'];
 myArray.push('product4');
 myArray.pop('product4');
 
+window.document.location.hostname
+window.document.location.pathname
 
 Math.round(2.24)
 
@@ -71,7 +73,7 @@ Math.abs(-18)
 ```javascript
 
 function logStuffToConsole() {
-	console.log('Votez Webalab en 2022!');
+	console.log('Bonjour à tous!');
 }
 
 //La fonction en elle-même est, pour l'heure, juste déclarée, mais pas appelée
@@ -79,11 +81,11 @@ function logStuffToConsole() {
 logStuffToConsole();
 //On appelle ensuite la fonction pour afficher le message dans la console
 
-function logStuffToConsole(candidate) {
-	console.log('Votez ' + candidate + ' en 2022!');
+function logStuffToConsole(utilisateur) {
+	console.log('Bonjour ' + utilisateur + ' et bienvenue!');
 }
 
-logStuffToConsole('Karim Benzema');
+logStuffToConsole('Paul Dupont');
 
 function multiplyBy42(userNumber) {
 	return userNumber*42;
@@ -148,6 +150,13 @@ for (var item in product){
 ```
 
 ## Chapitre 10 : La manipulation du DOM
+
+```javascript
+
+document.querySelector("#content > div.editorial-feed-zone.light.lg\\:mt-10 > div > div:nth-child(1) > div > div.common-container.flex-1.pt-5.lg\\:ml-5.lg\\:py-0 > div > div > div:nth-child(3) > div > a > div.flex.flex-col.justify-between.relative.ml-3 > div:nth-child(1) > div.mt-1 > h3")
+
+document.querySelectorAll('div')
+```
 
 ## Chapitre 12 : Les event listeners 
 
