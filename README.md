@@ -8,6 +8,11 @@ var myInteger = 27;
 var myFloat = 32.4;
 var myString = 'hello World';
 console.log(myFloat);
+typeof(myInteger);
+typeof(myString);
+myInteger.toString();
+Number('4');
+typeof(Number('4'));
 ```
 
 ## Chapitre 6 : Focus sur les tableaux et objets
@@ -94,13 +99,37 @@ function multiplyBy42(userNumber) {
 var myMultipliedNumber = multiplyBy42(24);
 //Devrait retourner 1008 si tout se passe bien
 
+(function () {
+  console.log('Je vais être exécuté!');
+})();
+
 ```
 
 ## Chapitre 9 : Les structures de boucles (if / else, switch, while…)
 
 ```javascript
 var firstNumber = 17;
-var otherNumber = '17';
+
+if ( firstNumber > 12){
+	console.log('le nombre est supérieur à 12!');
+}
+
+if ( firstNumber > 17){
+	console.log('le nombre est strictement supérieur à 17!');
+}
+else {
+	console.log('le nombre n'est pas strictement supérieur à 17...');
+}
+
+if ( firstNumber > 17){
+	console.log('le nombre est strictement supérieur à 17!');
+}
+else if ( firstNumber < 17 ) {
+	console.log('le nombre est strictement inférieur à 17...');
+}
+else {
+	console.log('le nombre doit être exactement égal à 17');
+}
 
 laxistTest = firstNumber == otherNumber; //renvoie true
 laxistTest = firstNumber === otherNumber; //renvoie false
