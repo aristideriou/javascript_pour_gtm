@@ -178,18 +178,14 @@ for (var item in product){
 }
 ```
 
-## Chapitre 10 : La manipulation du DOM
+## Chapitre 10 : Manipulation du DOM et event listeners
 
 ```javascript
 
 document.querySelector("#content > div.editorial-feed-zone.light.lg\\:mt-10 > div > div:nth-child(1) > div > div.common-container.flex-1.pt-5.lg\\:ml-5.lg\\:py-0 > div > div > div:nth-child(3) > div > a > div.flex.flex-col.justify-between.relative.ml-3 > div:nth-child(1) > div.mt-1 > h3")
 
 document.querySelectorAll('div')
-```
 
-## Chapitre 12 : Les event listeners 
-
-```javascript
 function headerClick(){
 	console.log('Click on header');
 }
@@ -202,11 +198,11 @@ headerSelector.addEventListener('click',headerClick);
 //On "attache" notre fonction "headerClick" à l'action de clic sur l'élément concerné par notre sélecteur CSS
 ```
 
-## Chapitre 13 : Cookies et local storage 
+## Chapitre 11 : Cookies et local storage 
 
 ```javascript
 
-document.cookie = "username=Michel Michel; expires=Thu, 18 Dec 2022 12:00:00 UTC; path=/";
+document.cookie = "username=Michel Michel; expires=Thu, 18 Dec 2030 12:00:00 UTC; path=/";
 
 localStorage.setItem('userId', '123456');
 //Créer une entrée de local storage
