@@ -1,6 +1,6 @@
 # javascript_pour_gtm
 
-## Chapitre 5 : Déclaration de variables
+## Chapitre 4 : Déclaration de variables
 
 ```javascript
 var myBoolean = true;
@@ -15,7 +15,7 @@ Number('4');
 typeof(Number('4'));
 ```
 
-## Chapitre 6 : Focus sur les tableaux et objets
+## Chapitre 5 : Focus sur les tableaux et objets
 
 ```javascript
 var myArray = ['product1','product3','product546'];
@@ -53,7 +53,7 @@ var products = [
 ]
 ```
 
-## Chapitre 7 : Utiliser des méthodes : exemples avec des tableaux et Math.
+## Chapitre 6 : Utiliser des méthodes : exemples avec des tableaux et Math.
 
 ```javascript
 var myArray = ['product1','product3','product546'];
@@ -73,7 +73,7 @@ Math.abs(-18)
 
 ```
 
-## Chapitre 8 : Factoriser son code avec des fonctions
+## Chapitre 7 : Factoriser son code avec des fonctions
 
 ```javascript
 
@@ -105,7 +105,7 @@ var myMultipliedNumber = multiplyBy42(24);
 
 ```
 
-## Chapitre 9 : Les structures de boucles (if / else, switch, while…)
+## Chapitre 8 : Les structures de boucles (if / else, switch, while…)
 
 ```javascript
 var firstNumber = 17;
@@ -178,7 +178,7 @@ for (var item in product){
 }
 ```
 
-## Chapitre 10 : Manipulation du DOM et event listeners
+## Chapitre 9 : Manipulation du DOM et event listeners
 
 ```javascript
 
@@ -198,7 +198,7 @@ headerSelector.addEventListener('click',headerClick);
 //On "attache" notre fonction "headerClick" à l'action de clic sur l'élément concerné par notre sélecteur CSS
 ```
 
-## Chapitre 11 : Cookies et local storage 
+## Chapitre 10 : Cookies et local storage 
 
 ```javascript
 
