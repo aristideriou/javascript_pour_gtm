@@ -28,6 +28,10 @@ var myArray = ['product1','product3','product546'];
 myArray[1]; //renvoie 'product3'
 myArray[2] = 'newproduct' ; //modifie le 3ème élément de l'array
 
+var myArray = ['product1','product3','product546'];
+myArray.push('product4');
+myArray.pop();
+
 var myArray = ['aa','bbb'];
 typeof myArray; 
 Array.isArray(myArray);
@@ -59,16 +63,9 @@ var products = [
 ]
 ```
 
-## Chapitre 6 : Méthodes et propriétés exemples avec des tableaux et Math.
+## Chapitre 6 : Méthodes et propriétés - Exemples avec des Math et window.document.
 
 ```javascript
-var myArray = ['product1','product3','product546'];
-myArray.push('product4');
-myArray.pop();
-
-window.document.location.hostname
-window.document.location.pathname
-
 var pi = Math.PI;
 console.log(pi); // Affiche la valeur de PI : 3.141592653589793
 
@@ -86,27 +83,25 @@ console.log(url); // Affiche l'URL complète de la page
 
 var nomHote = window.document.location.hostname;
 console.log(nomHote); // Affiche le nom de domaine de la page
-
-window.document.location.reload(); // Ceci rechargera effectivement la page, alors faites attention à l'utiliser !
 ```
 
 ## Chapitre 7 : Factoriser son code avec des fonctions
 
 ```javascript
 
-// 1. Déclaration d'une fonction simple sans paramètre et affichage d'un message
+//Déclaration d'une fonction simple sans paramètre et affichage d'un message
 function direBonjour() {
     console.log("Bonjour !");
 }
 direBonjour(); // Appel de la fonction, affiche : Bonjour !
 
-// 2. Déclaration d'une fonction avec des paramètres et affichage d'un message personnalisé
+//Déclaration d'une fonction avec des paramètres et affichage d'un message personnalisé
 function saluer(prenom) {
     console.log("Bonjour, " + prenom + " !");
 }
 saluer("Alice"); // Appel de la fonction, affiche : Bonjour, Alice !
 
-// 3. Déclaration d'une fonction qui retourne une valeur
+//Déclaration d'une fonction qui retourne une valeur
 function additionner(a, b) {
     return a + b;
 }
@@ -146,8 +141,8 @@ else {
 	console.log('le nombre doit être exactement égal à 17');
 }
 
-laxistTest = firstNumber == otherNumber; //renvoie true
-laxistTest = firstNumber === otherNumber; //renvoie false
+var laxistTest = firstNumber == otherNumber; //renvoie true
+var strictTest = firstNumber === otherNumber; //renvoie false
 
 var myNumber = 17;
 var myOtherNumber = 12;
@@ -203,14 +198,14 @@ myNumber > 12 ? control = 1 : control = 2;
 <button id="animerDiv">Animer la div</button>
 */
 
-    document.getElementById('animerDiv').addEventListener('click', function() {
-        var div = document.getElementById('maDivAnimee');
-        div.style.width = "200px";
-    });
+document.getElementById('animerDiv').addEventListener('click', function() {
+    var div = document.getElementById('maDivAnimee');
+    div.style.width = "200px";
+});
 
-    document.getElementById('maDivAnimee').addEventListener('transitionend', function() {
-        alert('Animation terminée !');
-    });
+document.getElementById('maDivAnimee').addEventListener('transitionend', function() {
+    alert('Animation terminée !');
+});
 
 
 //Exemple de la page de démo
@@ -249,9 +244,6 @@ console.log(localStorage.getItem('prenom')); // Affiche : John
 // Suppression d'une donnée
 localStorage.removeItem('prenom');
 
-// Suppression de toutes les données
-localStorage.clear();
-
 // Ajout d'une donnée
 sessionStorage.setItem('nom', 'Doe');
 
@@ -260,8 +252,5 @@ console.log(sessionStorage.getItem('nom')); // Affiche : Doe
 
 // Suppression d'une donnée
 sessionStorage.removeItem('nom');
-
-// Suppression de toutes les données
-sessionStorage.clear();
 
 ```
