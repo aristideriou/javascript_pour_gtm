@@ -13,6 +13,12 @@ typeof(myString);
 myInteger.toString();
 Number('4');
 typeof(Number('4'));
+
+var myOtherInteger = 10;
+var myOtherString = 'Welcome';
+
+console.log(myInteger + myOtherInteger);
+console.log(myInteger + myOtherString);
 ```
 
 ## Chapitre 5 : Focus sur les tableaux et objets
@@ -53,55 +59,64 @@ var products = [
 ]
 ```
 
-## Chapitre 6 : Utiliser des méthodes : exemples avec des tableaux et Math.
+## Chapitre 6 : Méthodes et propriétés exemples avec des tableaux et Math.
 
 ```javascript
 var myArray = ['product1','product3','product546'];
 myArray.push('product4');
-myArray.pop('product4');
+myArray.pop();
 
 window.document.location.hostname
 window.document.location.pathname
 
-Math.round(2.24)
+var pi = Math.PI;
+console.log(pi); // Affiche la valeur de PI : 3.141592653589793
 
-Math.random()
+var nombreArrondi = Math.round(4.7);
+console.log(nombreArrondi); // Affiche : 5
 
-Math.random()*1000
+var nombreInferieur = Math.floor(4.7);
+console.log(nombreInferieur); // Affiche : 4
 
-Math.abs(-18)
+var nombreAleatoire = Math.random();
+console.log(nombreAleatoire); // Affiche un nombre aléatoire entre 0 et 1
 
+var url = window.document.location.href;
+console.log(url); // Affiche l'URL complète de la page
+
+var nomHote = window.document.location.hostname;
+console.log(nomHote); // Affiche le nom de domaine de la page
+
+window.document.location.reload(); // Ceci rechargera effectivement la page, alors faites attention à l'utiliser !
 ```
 
 ## Chapitre 7 : Factoriser son code avec des fonctions
 
 ```javascript
 
-function logStuffToConsole() {
-	console.log('Bonjour à tous!');
+// 1. Déclaration d'une fonction simple sans paramètre et affichage d'un message
+function direBonjour() {
+    console.log("Bonjour !");
 }
+direBonjour(); // Appel de la fonction, affiche : Bonjour !
 
-//La fonction en elle-même est, pour l'heure, juste déclarée, mais pas appelée
-
-logStuffToConsole();
-//On appelle ensuite la fonction pour afficher le message dans la console
-
-function logStuffToConsole(utilisateur) {
-	console.log('Bonjour ' + utilisateur + ' et bienvenue!');
+// 2. Déclaration d'une fonction avec des paramètres et affichage d'un message personnalisé
+function saluer(prenom) {
+    console.log("Bonjour, " + prenom + " !");
 }
+saluer("Alice"); // Appel de la fonction, affiche : Bonjour, Alice !
 
-logStuffToConsole('Paul Dupont');
-
-function multiplyBy42(userNumber) {
-	return userNumber*42;
+// 3. Déclaration d'une fonction qui retourne une valeur
+function additionner(a, b) {
+    return a + b;
 }
+var somme = additionner(3, 4);
+console.log(somme); // Affiche : 7
 
-var myMultipliedNumber = multiplyBy42(24);
-//Devrait retourner 1008 si tout se passe bien
-
-(function () {
-  console.log('Je vais être exécuté!');
-})();
+// Déclaration et exécution immédiate d'une fonction anonyme
+(function() {
+    console.log("Ceci est une IIFE !");
+})(); // Affiche : Ceci est une IIFE !
 
 ```
 
@@ -145,20 +160,6 @@ if(myNumber > 15 || myOtherNumber > 15){
 	console.log('Au moins un des deux nombres est supérieur à 15');
 }
 
-var myNumber = 17;
-var control = 0;
-
-if(myNumber > 12){
-	control = 1;
-}
-else{
-	control = 2;
-}
-//Un peu long à écrire, non?
-
-myNumber > 12 ? control = 1 : control = 2;
-//Ecriture équivalente avec un ternaire
-
 var myArray = ['riri','fifi','loulou'];
 
 for (var i = 0; i < myArray.length; i++) {
@@ -176,41 +177,91 @@ for (var item in product){
 	console.log(item);
 	console.log(products[item]);
 }
+
+var myNumber = 17;
+var control = 0;
+
+if(myNumber > 12){
+	control = 1;
+}
+else{
+	control = 2;
+}
+//Un peu long à écrire, non?
+
+myNumber > 12 ? control = 1 : control = 2;
+//Ecriture équivalente avec un ternaire
+
 ```
 
 ## Chapitre 9 : Manipulation du DOM et event listeners
 
 ```javascript
 
-document.querySelector("#content > div.editorial-feed-zone.light.lg\\:mt-10 > div > div:nth-child(1) > div > div.common-container.flex-1.pt-5.lg\\:ml-5.lg\\:py-0 > div > div > div:nth-child(3) > div > a > div.flex.flex-col.justify-between.relative.ml-3 > div:nth-child(1) > div.mt-1 > h3")
+/*
+<div id="maDivAnimee" style="width: 100px; height: 100px; background-color: blue; transition: width 2s;"></div>
+<button id="animerDiv">Animer la div</button>
+*/
 
-document.querySelectorAll('div')
+    document.getElementById('animerDiv').addEventListener('click', function() {
+        var div = document.getElementById('maDivAnimee');
+        div.style.width = "200px";
+    });
 
-function headerClick(){
-	console.log('Click on header');
-}
-//On commence par déclarer la fonction qui sera appelée lors de l'action utilisateur, mais pour l'instant, elle n'est pas appelée
- 
-var headerSelector = document.querySelector('#header > div > .');
-//On met notre sélecteur dans une variable
+    document.getElementById('maDivAnimee').addEventListener('transitionend', function() {
+        alert('Animation terminée !');
+    });
 
-headerSelector.addEventListener('click',headerClick);
-//On "attache" notre fonction "headerClick" à l'action de clic sur l'élément concerné par notre sélecteur CSS
+
+//Exemple de la page de démo
+ver newsletterButton = document.getElementById("custom");
+  newsletterButton.addEventListener("click", () => {
+    newsletterButton.innerHTML = "Merci, vous êtes maintenant abonné";
+    dataLayer.push({
+      event: "newsletterSubscription",
+      clientType: "Prospect",
+      source: "Popup",
+      frequency: "Hebdo"
+      ]
+    });
+  });
 ```
 
 ## Chapitre 10 : Cookies et local storage 
 
 ```javascript
 
-document.cookie = "username=Michel Michel; expires=Thu, 18 Dec 2030 12:00:00 UTC; path=/";
+// Création d'un cookie
+document.cookie = "username=John Doe; expires=Fri, 31 Dec 2023 12:00:00 UTC; path=/";
 
-localStorage.setItem('userId', '123456');
-//Créer une entrée de local storage
+// Accès à tous les cookies
+console.log(document.cookie); // Affiche quelque chose comme : username=John Doe; ...
 
-var cat = localStorage.getItem('userId');
-//Récupérer une entrée de local storage
+// Suppression d'un cookie
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
-localStorage.removeItem('userId');
-//Supprimer une entrée de local storage
+// Ajout d'une donnée
+localStorage.setItem('prenom', 'John');
+
+// Accès à une donnée
+console.log(localStorage.getItem('prenom')); // Affiche : John
+
+// Suppression d'une donnée
+localStorage.removeItem('prenom');
+
+// Suppression de toutes les données
+localStorage.clear();
+
+// Ajout d'une donnée
+sessionStorage.setItem('nom', 'Doe');
+
+// Accès à une donnée
+console.log(sessionStorage.getItem('nom')); // Affiche : Doe
+
+// Suppression d'une donnée
+sessionStorage.removeItem('nom');
+
+// Suppression de toutes les données
+sessionStorage.clear();
 
 ```
