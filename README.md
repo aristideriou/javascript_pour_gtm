@@ -189,7 +189,39 @@ myNumber > 12 ? control = 1 : control = 2;
 
 ```
 
-## Chapitre 9 : Manipulation du DOM et event listeners
+## Chapitre 9 : Cookies et local storage 
+
+```javascript
+
+// Création d'un cookie
+document.cookie = "username=John Doe; expires=Fri, 31 Dec 2023 12:00:00 UTC; path=/";
+
+// Accès à tous les cookies
+console.log(document.cookie); // Affiche quelque chose comme : username=John Doe; ...
+
+// Suppression d'un cookie
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+// Ajout d'une donnée
+localStorage.setItem('prenom', 'John');
+
+// Accès à une donnée
+console.log(localStorage.getItem('prenom')); // Affiche : John
+
+// Suppression d'une donnée
+localStorage.removeItem('prenom');
+
+// Ajout d'une donnée
+sessionStorage.setItem('nom', 'Doe');
+
+// Accès à une donnée
+console.log(sessionStorage.getItem('nom')); // Affiche : Doe
+
+// Suppression d'une donnée
+sessionStorage.removeItem('nom');
+```
+
+## Chapitre 10 : Manipulation du DOM et event listeners
 
 ```javascript
 
@@ -222,35 +254,6 @@ ver newsletterButton = document.getElementById("custom");
   });
 ```
 
-## Chapitre 10 : Cookies et local storage 
 
-```javascript
-
-// Création d'un cookie
-document.cookie = "username=John Doe; expires=Fri, 31 Dec 2023 12:00:00 UTC; path=/";
-
-// Accès à tous les cookies
-console.log(document.cookie); // Affiche quelque chose comme : username=John Doe; ...
-
-// Suppression d'un cookie
-document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-// Ajout d'une donnée
-localStorage.setItem('prenom', 'John');
-
-// Accès à une donnée
-console.log(localStorage.getItem('prenom')); // Affiche : John
-
-// Suppression d'une donnée
-localStorage.removeItem('prenom');
-
-// Ajout d'une donnée
-sessionStorage.setItem('nom', 'Doe');
-
-// Accès à une donnée
-console.log(sessionStorage.getItem('nom')); // Affiche : Doe
-
-// Suppression d'une donnée
-sessionStorage.removeItem('nom');
 
 ```
