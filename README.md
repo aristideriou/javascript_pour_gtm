@@ -128,7 +128,7 @@ if ( firstNumber > 17){
 	console.log('le nombre est strictement supérieur à 17!');
 }
 else {
-	console.log('le nombre n'est pas strictement supérieur à 17...');
+	console.log('le nombre n\'est pas strictement supérieur à 17...');
 }
 
 if ( firstNumber > 17){
